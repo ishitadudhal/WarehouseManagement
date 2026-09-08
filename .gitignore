@@ -1,0 +1,24 @@
+# Environment / secrets — never commit real credentials
+.env
+
+# Database file — contains local data, should not be shared via git
+instance/
+*.db
+
+# Python cache and bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment folders (if you ever create one)
+venv/
+env/
+.venv/
+
+# OS-specific junk files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/

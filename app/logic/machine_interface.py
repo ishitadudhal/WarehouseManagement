@@ -38,10 +38,14 @@ Until then, ENDPOINT_URL below is a placeholder and connect() will simply fail
 loudly and clearly rather than pretend to succeed.
 """
 
+# pip install asyncua
+import os
 from asyncua.sync import Client
 
-# ── Configuration — fill these in once known ────────────────────────────────
-ENDPOINT_URL = "opc.tcp://<PLC-IP-ADDRESS>:4840"   # TODO: get real IP from lab
+# ── Configuration — read from .env, with a placeholder fallback ────────────
+# Fill in OPCUA_ENDPOINT_URL in your .env file once the lab gives you the
+# real machine's IP address, e.g.:  OPCUA_ENDPOINT_URL=opc.tcp://192.168.1.50:4840
+ENDPOINT_URL = os.environ.get("OPCUA_ENDPOINT_URL", "opc.tcp://<PLC-IP-ADDRESS>:4840")
 NAMESPACE_URI = "http://TechnikumEID13.hsel.de"
 
 # Node paths, relative to the "Lager" object, as documented in Ubben (2025) Anhang B
